@@ -1,0 +1,71 @@
+@import '../../styles/vars';
+
+.sidebar{
+    .topSide{
+        width: max-content;
+        height: max-content;
+    }
+  
+    .bars{
+        display:flex;
+        font-size: 30px;
+        
+        padding:5px 5px;
+
+    
+    
+    }
+    .link{
+        color:$black-1;
+        display:flex;
+        font-size: 25px;
+        padding: 10px 15px;
+        transition: all 0.5s;
+        flex-direction: column;
+        align-content: center;
+    }
+    .link_text{
+
+        font-size: 0.4em;
+       
+
+    }
+    .link:hover{
+        background: $white-2;
+        color:$deep-red;
+        transition: all 0.5s;
+    }
+    .active{
+        background-color: $white-2;
+        color: $deep-red
+        
+    }
+}
+@media(min-width:600px){
+        .sidebar{
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start
+        }
+        .sidebar .link {
+            padding-right: .5rem;
+            padding-left: .5rem;
+
+        }
+        .sidebar .bars{
+            display: none;
+        }
+}
+@media(max-width:600px)
+{
+    .sidebar .link{
+        display: none;
+        
+    }
+    .sidebar .bars{
+        position:relative; 
+        float:inline-end;
+    }
+    
+    
+}

@@ -1,0 +1,72 @@
+@import '../../styles/vars';
+@import url("https://rsms.me/inter/inter.css");
+.container{
+    width: 321px;
+    height: 611px;
+    position: relative;
+    background-color: $white-2;
+    border-radius: 8%;
+    box-shadow: 0px 1px 2px -1px #C8CAD1;
+    @media(max-width:768px){
+
+    }
+    .lastes-news-widget{
+    
+        
+        width: 310px;
+        height: 519px;
+        background-color: $white-2;
+        box-shadow: 0px 1px 2px -1px #C8CAD1;
+        overflow-y: scroll;
+        text-overflow: ellipsis;
+        
+        
+        .last-news{
+            padding: 10px 5px;
+        }
+        h5{
+    
+            width: 281px;
+            height: 20px;
+            padding-top: 10px;
+            font-family: 'InterV_Medium';
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: -0.11px;
+            color: $black-1;
+        }
+        p{
+            
+            width: 134px;
+            height: 16px;
+            left: 963px;
+            top: 640px;
+    
+            font-family: 'InterV_Bold';
+            font-size: 10px;
+            line-height: 16px;
+            letter-spacing: -0.0153846px;
+            text-transform: uppercase;
+    
+            color: $blue-1;
+            
+        }
+       
+    }
+    div.button{
+    
+        width: 321px !important;
+        border-radius: 8% !important;
+        background-color: $white-2;
+        height: 51px;
+        color: $blue-1;
+        font-family: 'InterV_Medium';
+        font-size: 14px;
+        letter-spacing: -0.09625px;
+        
+        a:hover{
+            cursor: pointer;
+        }
+    }
+   
+}

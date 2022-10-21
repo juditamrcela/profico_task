@@ -1,0 +1,22 @@
+$deep-red:#BB1E1E;
+$white-1:#F2F2F2;
+$white-2:#FFFFFF;
+$black-1:#000000;
+$black-2:#1D1D1B;
+$blue-1:#1E71BB;
+
+
+//border radius
+$borderRadius:12px;
+
+//header height
+$headerHeight:60px;
+
+@mixin breakpoint($point) {
+    @if $point ==md{
+        //768px
+        @media(min-width: 48em){
+            @content;
+        }
+    }
+}

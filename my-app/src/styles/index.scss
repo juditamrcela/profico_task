@@ -1,0 +1,36 @@
+@import "./_vars.scss";
+@import "@fontsource/inter";
+@import url("https://rsms.me/inter/inter.css");
+*{
+    
+    box-sizing: border-box;
+    margin: 0;
+}
+html,body{
+    width: auto !important;
+    background-color: $white-1 !important;
+    font-family: "Inter" !important;
+}
+#root{
+    height: 100%;
+}
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+.main-wrapper{
+    padding: 50px 50px;
+    margin: 50px 50px;
+    min-height: 90vh;
+    min-width: fit-content;
+    @media(max-width: 768px){
+        padding: 20px 20px;
+    }
+    
+}
+.sidebar{
+    background-color: $white-1;
+    
+
+}
