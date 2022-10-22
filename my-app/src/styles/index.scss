@@ -21,9 +21,8 @@ html,body{
 
 .main-wrapper{
     padding: 50px 50px;
-    margin: 50px 50px;
+    margin: 50px 120px;
     min-height: 90vh;
-    min-width: fit-content;
     @media(max-width: 768px){
         padding: 20px 20px;
     }

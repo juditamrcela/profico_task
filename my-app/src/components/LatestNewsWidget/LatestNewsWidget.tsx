@@ -11,15 +11,19 @@ const LatestNewsWidget:React.FC<INewsDataProps>=(props:INewsDataProps)=>{
     return(
         <div className="container">
         <h5>Latest news</h5>
-        <div className='lastes-news-widget'>
+        <div className='latest-news-widget'>
             <div>
             {props.news.map((n:INewsData)=>{
                     return (
+                        <>
                         <div className="last-news">
                             <p>{moment(n.publishedAt).format('HH:mm')}</p>
                             <h5>{n.title}</h5>
-                            <hr></hr>
+                            
                         </div>
+                        <hr></hr>
+                        </>
+                        
                     
                     )
                 })}

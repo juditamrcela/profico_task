@@ -1,17 +1,27 @@
 import React from "react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { AiFillHome,AiFillHeart } from "react-icons/ai"
 import { NavLink } from 'react-router-dom'
 import { BsBriefcaseFill,BsNewspaper } from "react-icons/bs";
-import { MdOutlineSportsSoccer } from "react-icons/md";
+import { MdOutlineSportsSoccer,MdOutlineHealthAndSafety } from "react-icons/md";
 import { CgScreen } from "react-icons/cg";
 import { FaBars} from 'react-icons/fa';
+import { GiMaterialsScience } from "react-icons/gi";
 import { FiX } from "react-icons/fi";
 import 'bootstrap/dist/css/bootstrap.css';
 import './Sidebar.scss';
 const Sidebar:React.FC=()=>{
     const [isOpen,setIsOpen]=useState<boolean>(false)
+    const [isMobile,setIsMobile]=useState(window.innerWidth<1200)
     const toggle=()=>setIsOpen(!isOpen);
+    useEffect(()=>{
+        window.addEventListener("resize",()=>{
+            const ismobile=window.innerWidth<1200;
+            if(ismobile!==isMobile) {
+                setIsMobile(ismobile);
+            }
+        },false)
+    },[isMobile])
     const menuItem=[
         {
             path:"/",
@@ -31,12 +41,12 @@ const Sidebar:React.FC=()=>{
         {
             path:"/health",
             name:"Health",
-            icon:<AiFillHome/>
+            icon:<MdOutlineHealthAndSafety/>
         },
         {
             path:"/science",
             name:"Science",
-            icon:<AiFillHome/>
+            icon:<GiMaterialsScience/>
         },
         {
             path:"/sports",
@@ -65,14 +75,17 @@ const Sidebar:React.FC=()=>{
                         <FiX onClick={toggle}/>
                     </div>
                 </div>
-                <div className="links">
-                { menuItem.map((item,index)=>(
-                    <NavLink to={item.path} key={index} className="link">
-                        <div className="icon">{item.icon}</div>
-                        <div className="link_text">{item.name}</div>
-                    </NavLink>
-                ))}
-                </div>
+                
+                    <div  className={(isOpen && isMobile)? 'links-open' : 'links'}>
+                    { menuItem.map((item,index)=>(
+                        <NavLink to={item.path} key={index} className={(!isOpen && isMobile)? 'links-closed': 'link'}>
+                            <div className="icon">{item.icon}</div>
+                            <div className="link_text">{item.name}</div>
+                        </NavLink>
+                    ))}
+                    </div>
+                
+               
                 
 
             </div>

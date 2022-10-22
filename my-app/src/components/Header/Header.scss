@@ -1,4 +1,3 @@
-//radim module tako da mozemo korisiti stilove kao objekte
 @import './../../styles/_vars.scss';
 @import "@fontsource/inter";
 
@@ -9,21 +8,31 @@
     top: 0px;
     margin: 0 auto;
     display:flex;
+    font-size: 16px;
     align-items: center;
     justify-content: space-between;
+    font-family: 'InterV_Bold' !important;
     background: linear-gradient(180deg, #BB1E1E 71.29%, #B21919 99.95%);
     padding: 0 80px;
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
         display: none;
     }
-}
-.text{
-    color:$white-1;
-    font-family: 'InterV';
-    font-size: 14px;
-    line-height: 21px;
-    display: inline;
-    font-family: 'InterV_Bold';
-
-
+    button{
+        border-radius: 8px;
+        background-color: $white-2;
+        border: 3px;
+        width: 69px;
+        height: 40px;
+        padding: 5px 5px;
+    }
+    .text{
+        color:$white-1;
+        font-size: 14px;
+        line-height: 21px;
+        display: inline;
+        font-family: 'InterV_Bold';
+        padding: 5px 5px;
+    
+    
+    }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect,useState } from 'react';
 import INewsData  from './../../types/News';
 import NewsBox from '../NewsBox/NewsBox';
-import {ILastesNewsData} from '../../types/LastesNews';
+import {ILatestNewsData} from '../../types/LatestNews';
 import NewsService from '../../services/NewsService';
 import LatestNewsWidget from '../LatestNewsWidget/LatestNewsWidget';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -11,22 +11,39 @@ import '../../styles/index.scss';
 
 
 export interface INewsProps{
-    latestNews:ILastesNewsData[]
+    latestNews:ILatestNewsData[]
 }
 
 const News :React.FC<INewsProps>=(props:INewsProps)=>{
     
     const [news,setNews] = useState<INewsData[]>([]);
+    const [isMobile,setIsMobile]=useState(window.innerWidth<1200)
     const [featured,setFeatured]=useState<boolean>(true);
-    const [latest,setLatest]=useState<boolean>(true);
-    const handleClick=()=>(setFeatured(!featured));
+    const [latest,setLatest]=useState<boolean>(false);
+    const handleClick=()=>{
+        setFeatured(true)
+        setLatest(false)
+    }
+    const handleClickLatest=()=>{
+        setLatest(true)
+        setFeatured(false)
+    }
+    useEffect(()=>{
+        window.addEventListener("resize",()=>{
+            const ismobile=window.innerWidth<1200;
+            if(ismobile!==isMobile) {
+                setIsMobile(ismobile);
+            }
+        },false)
+    },[isMobile])
     useEffect(()=>{
        
         NewsService.
         getAll()
         .then((res:any)=>{
+            
             setNews(res.data.articles)
-            console.log(res.data.articles)
+            
         })
         .catch((e:Error)=>{
             console.log(e)
@@ -39,11 +56,11 @@ const News :React.FC<INewsProps>=(props:INewsProps)=>{
     <>
         <div className='buttons'>
             <button onClick={handleClick} className='featured-button'>Featured</button>
-            <button className='latest-button'>Latest</button>
+            <button onClick={handleClickLatest} className='latest-button'>Latest</button>
 
         </div>
         <div className='wrapper'>
-                <div className='box-wraper'>
+                <div className={(isMobile && featured) ? 'mobile-screen-featured' : 'box-wraper'}>
                         
                         {props.latestNews.map((n)=><NewsBox
                                 key={n.id}
@@ -65,7 +82,7 @@ const News :React.FC<INewsProps>=(props:INewsProps)=>{
                                 />)
                                 }
                     </div> 
-                    <div className='lastesNews-wrap'>   
+                    <div className={(isMobile && latest)? "mobile-screen-latest": "latestNews-wrap"}>   
                     <LatestNewsWidget news={news}></LatestNewsWidget>
                 </div>
                 

@@ -6,7 +6,7 @@ const Header:React.FC=()=>{
             <p className="text">Make MyNews your homepage</p>
             <p className="text">Every day discover what's trending on the internet!</p>
             <div>
-                <button>GET</button>
+                <button >GET</button>
                 <p className="text">No,thanks</p>
             </div>
             

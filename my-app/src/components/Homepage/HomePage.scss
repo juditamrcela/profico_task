@@ -6,7 +6,10 @@
     
     display: flex;
     height: fit-content;
-   
+
+    .col-md-7.sm-8{
+        padding: 7px 7px;
+    }
     .h1-red{
         color: $deep-red;
     
@@ -21,6 +24,15 @@
         font-size: 32px;
         line-height: 39px;
     }
+    h5{
+       
+
+        font-family: 'InterV_Semi';
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.153px;
+        color: $black-2;
+    }
     Input.ant-input{
         width: 725px;
         height: 50px;
@@ -31,7 +43,7 @@
             background: url("E:\profico_task\profico_task\my-app\src\assets\icons\search.svg") no-repeat left;
             background-size: 20px;
           }
-        @media  screen and (max-width:1050px) {
+        @media  screen and (max-width:1040px) {
             width:100%;
             height: 50px;
             padding: auto;
@@ -47,6 +59,14 @@
             height: 48px;
             padding: 5px 5px;
         }
+    }
+}
+@media (max-width:768px){
+    .row{
+        h5.title{
+            display: none;
+        }
+        hr.line{display: none;}
     }
 }
 

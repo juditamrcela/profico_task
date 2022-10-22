@@ -1,46 +1,8 @@
-# Getting Started with Create React App
+#Code description
+A frontend was created for the needs of the news channel. React library with scss was used for creation. When creating the design, bootstrap was used a bit, as well as antdesign and mix of libraries for icons. I mostly custom made classes so that the final product would be as close as possible to the target. To create the bookmark feature, the bootstrap icon "bookmark" located in the lower right corner was used. And the marked articles are under the favorites category, which is marked with the "heart" icon. When selecting the desired article, the appearance of the bookmark icon changes from empty to full, and thus the article is added to the "Favorites" category, and by pressing the icon again, the icon takes on the empty initial appearance and thus the icon is moved from the "Favorites" category. Why exactly? I was guided so that the already known feature would be consistent, so that it would not be too different from the way it is implemented in similar applications. The "bookmark" icon is known to clients thus, using the bookmark feature in this application becomes intuitive, because the client encounters something that is already familiar to him.
+#Features that were not implemented and why:
+Some features were not implemented because I could not find the  right way to solve the issuse. First of features which was not implement is button and icon inside the search input. I tried using prefix and sufix with few different libraries for input design, and then some custom input. But the main purpose of search input still works, just the function is a bit different. Insted of search on clicked button, user must write wanted search word and then dynamically content changes as the user writes inside the search input.
+Next feature that I did not implement is active link on sidebar changes when user clicks on another category. So, whenever user click different category, home category keeps active link design. Problem comes from different version of react-router-dom, in which there is no "exact" param. so the home route stays active all the time.
+Next feature I did not implement is news box fitting just right inside news component. I tried using different techniques for it to fit, such as bootstrap grid, antdesign grid, and lastly I tried making custom grid but it did not fit just right.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Other required functionalites I did implement by bearing in mind desing pattern and principles and responsive design, while keeping code clean as possible.

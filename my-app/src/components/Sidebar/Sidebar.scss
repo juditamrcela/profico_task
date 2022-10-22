@@ -1,11 +1,8 @@
 @import '../../styles/vars';
 
 .sidebar{
-    .topSide{
-        width: max-content;
-        height: max-content;
-    }
-  
+    
+    border: 20px;
     .bars{
         display:flex;
         font-size: 30px;
@@ -41,11 +38,11 @@
         
     }
 }
-@media(min-width:600px){
+@media(min-width:768px){
         .sidebar{
             flex-direction: row;
             flex-wrap: nowrap;
-            justify-content: flex-start
+            
         }
         .sidebar .link {
             padding-right: .5rem;
@@ -53,19 +50,26 @@
 
         }
         .sidebar .bars{
+            flex-direction: row;
+            flex-wrap: nowrap;
             display: none;
+            float: right;
         }
 }
-@media(max-width:600px)
-{
-    .sidebar .link{
-        display: none;
-        
-    }
-    .sidebar .bars{
-        position:relative; 
-        float:inline-end;
-    }
+div.links{
+    .links-closed{
+            display: none;
     
+    }
+}
+
+div.links-open{
     
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 470px;
+    .link{
+        font-size: 55px;
+    }
 }

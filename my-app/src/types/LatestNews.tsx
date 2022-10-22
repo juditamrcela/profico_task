@@ -7,7 +7,7 @@ export interface Imultimedia{
     caption:string;
 
 }
-export  interface ILastesNewsData{
+export  interface ILatestNewsData{
     url:string;
     adx_keywords:string;
     byline:string;

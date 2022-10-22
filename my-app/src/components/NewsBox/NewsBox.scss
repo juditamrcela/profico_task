@@ -3,10 +3,12 @@
 .news-box{
     position: relative;
     border-radius: 12px;
-    width: 322px;
-    height: 252px;
+    border: 5px;
+    width: 350px;
+    height: 282px;
     padding: 10px 10px;
     background-color: $white-2;
+    box-sizing: border-box;
     .overlay{
         
         width: 100%;
@@ -39,9 +41,24 @@
     p{
         color:$black-2;
         font-family: 'InterV';
-        font-size: 12px;
+        font-size-adjust: 0.50;
         line-height: 14px;
         letter-spacing: -0.0675px;
+        margin: 0;
     }
+    a{
+        float: right;
+        display: inline;
+        cursor: pointer;
+        color:$black-1;
+       
+    }
+    a.icon:hover {
+        fill: $black-1;
+      }
+    .icon.changeColor {
+        color: $black-1;
+    }
+   
 
 }
